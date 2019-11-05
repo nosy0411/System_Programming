@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+c	practice/add.cpp	/^int c = 0;$/;"	v
+d	practice/add.cpp	/^int d = 100;$/;"	v
+main	assignment1/Code-1.c	/^int main(){$/;"	f
+main	assignment1/Code-1_revision.c	/^int main(){$/;"	f
+main	assignment1/Code-2.c	/^int main(){$/;"	f
+main	assignment1/Code-2_revision.c	/^int main(){$/;"	f
+main	assignment1/Code-3.c	/^int main(){$/;"	f
+main	assignment1/Code-3_revision.c	/^int main(){$/;"	f
+main	assignment1/Code-4.c	/^int main(){$/;"	f
+main	assignment1/Code-4_revision.c	/^int main(){$/;"	f
+main	assignment2/2.61.c	/^int main(){$/;"	f
+main	assignment2/2.76.c	/^int main(){$/;"	f
+main	assignment2/2.80.c	/^int main(){$/;"	f
+main	assignment2/test.c	/^int main(){$/;"	f
+main	practice/add.cpp	/^int main()$/;"	f
+main	practice/hello.c	/^int main()$/;"	f
+main	practice/hello_world.c	/^int main(){$/;"	f
+main	practice/helloworld_cpp.cpp	/^int main()$/;"	f
+main	practice/test.cpp	/^int main(){$/;"	f
+main	practice/type_conversion.c	/^int main(){$/;"	f
+main	practice/type_conversion2.c	/^int main(){$/;"	f
+main	practice/type_conversion3.c	/^int main(){$/;"	f
+main	practice/type_conversion4.c	/^int main(){$/;"	f
+main	test_and_practice/main.c	/^int main(){$/;"	f
+mult2	test_and_practice/main.c	/^long mult2(long a, long b){$/;"	f
+multstore	test_and_practice/mstore.c	/^void multstore(long x, long y, long *dest){$/;"	f
+strlonger	assignment1/Code-3.c	/^int strlonger(char *s, char *t){$/;"	f
+strlonger	assignment1/Code-3_revision.c	/^int strlonger(char *s, char *t){$/;"	f
+sum_array	assignment1/Code-2.c	/^int sum_array(int a[], unsigned len){$/;"	f
+sum_array	assignment1/Code-2_revision.c	/^int sum_array(int a[], int len){$/;"	f
