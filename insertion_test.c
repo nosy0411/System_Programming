@@ -63,29 +63,39 @@ void insert(links* x, char w[20]) {
 
 links countalign(links* x){
 	node *n, *temp, *i;
+    links* y;
 	i=x->head;
     n=x->head->nxt;
-    int check=0;
+	int check=0;
 	while (n != NULL){
         while(i->prv!=NULL && check==0){
             i=i->prv;
         }
-        printf("%s\n",i->word);
 		if(n->count <= i->count){
-            check=1;
 			i=i->nxt;
+            check=1;
             if(strcmp(n->word,i->word)==0){
                 n=n->nxt;
-                check=0;
+				check=0;
                 continue;
             }
 
 		}
 		else{
-            printf("check;\n");
+			check=0;
             temp=n->nxt;
             if(temp==NULL){
                 n->prv->nxt=n->nxt;
+				if(i->prv==NULL){
+					i->prv=n;
+					n->nxt=i;
+					n->prv=NULL;
+					break;
+            	}
+				i->prv->nxt=n;
+            	n->nxt=i;
+            	n->prv=i->prv;
+            	break;
             }
             else{
                 n->nxt->prv=n->prv;
@@ -103,24 +113,13 @@ links countalign(links* x){
                 n=temp;
                 continue;
             }
-            if(i->prv==NULL){
-                i->prv=n;
-                n->nxt=i;
-                n->prv=NULL;
-                n=temp;
-                continue;
-            }
-            i->prv->nxt=n;
-            n->nxt=i;
-            n->prv=i->prv;
-            n=temp;
         }
 	}
     while(i->prv!=NULL){
         i=i->prv;
     }
-    x->head=i;
-	return (*x);
+    y->head=i;
+	return (*y);
 }
 
 int wordcount(links l, int i) {
@@ -135,6 +134,31 @@ int wordcount(links l, int i) {
 void PrintList(links* plist) {
     for (node* cur = plist->head; cur != NULL; cur = cur->nxt)
         printf("%-20s\t %d\n", cur->word,cur->count);
+}
+
+void printrank(links l) {
+	node* no = l.head;
+	node* no2 = l.head;
+	int cnt;
+	while (no != NULL) {
+		if (no->nxt != NULL) {
+			if (no->count != no->nxt->count) {
+				cnt = wordcount(l, no->count);
+				printf("\n%d  %d : ", no->count, cnt);
+				for (no2 = l.head; no2->count != no->count; no2 = no2->nxt);
+				for (; no2->count == no->count; no2 = no2->nxt) {
+					printf("%s, ", no2->word);
+				}
+			}
+		}
+		no = no->nxt;
+	}
+	cnt = wordcount(l, 1);
+	printf("\n1  %d : ", cnt);
+	for (no2 = l.head; no2->count != 1; no2 = no2->nxt);
+	for (; no2!=NULL; no2 = no2->nxt) {
+		printf("%s, ", no2->word);
+	}
 }
 
 int main(void)
@@ -164,5 +188,6 @@ int main(void)
 	list1=countalign(&list1);
 	printf("------최종 정렬------\n");
     PrintList(&list1);
+    printrank(list1);
 	 // 정렬 된 모습을 출력
 }

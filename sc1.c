@@ -64,6 +64,7 @@ void countup(links* x, char w[N]) {
 			}
 			else {
 				if (n2 == NULL) n2 = x->head;
+				else n2 = n2->nxt;
 				strswap(n->word, n2->word);
 				n->count--;
 				n2->count++;
